@@ -1,0 +1,28 @@
+{
+    "name": "fullpipe/email-template-bundle",
+    "type": "symfony-bundle",
+    "description": "Keep email templates in repo and in order",
+    "keywords": ["email, templates"],
+    "homepage": "https://github.com/fullpipe/email-template-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eugene Bravov",
+            "email": "eugene.bravov@gmail.com",
+            "homepage": "https://github.com/fullpipe/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.3",
+        "html2text/html2text": "~2.0",
+        "tijsverkoyen/css-to-inline-styles": "~1.5",
+        "symfony/twig-bundle":             "~2.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "Fullpipe\\EmailTemplateBundle": ""
+        }
+    },
+    "target-dir": "Fullpipe/EmailTemplateBundle"
+}
