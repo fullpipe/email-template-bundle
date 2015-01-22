@@ -2,7 +2,7 @@
     "name": "fullpipe/email-template-bundle",
     "type": "symfony-bundle",
     "description": "Keep email templates in repo and in order",
-    "keywords": ["email, templates"],
+    "keywords": ["email", "templates"],
     "homepage": "https://github.com/fullpipe/email-template-bundle",
     "license": "MIT",
     "authors": [
