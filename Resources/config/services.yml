@@ -1,4 +1,9 @@
+parameters:
+    fullpipe_email_template.factory.message_factory.class: Fullpipe\EmailTemplateBundle\Factory\MessageFactory
+
 services:
-#    fullpipe_email_template.example:
-#        class: Fullpipe\EmailTemplateBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    fullpipe_email_template.factory.message_factory:
+        class: %fullpipe_email_template.factory.message_factory.class%
+        arguments:
+            - @twig
+            - %fullpipe_email_template.templates%
