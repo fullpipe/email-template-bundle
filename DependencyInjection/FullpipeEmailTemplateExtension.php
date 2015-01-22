@@ -22,6 +22,16 @@ class FullpipeEmailTemplateExtension extends Extension
             throw new TemplateNotExistsException('default');
         }
 
+        $config['utm'] = isset($config['utm']) ? $config['utm'] : array();
+
+        foreach ($config['templates'] as $templateName => $templateConfig) {
+            $config['templates'][$templateName] = array_merge(
+                array('utm' => $config['utm']),
+                array('host' => $config['host']),
+                $templateConfig
+            );
+        }
+
         $container->setParameter('fullpipe_email_template.defaults.utm', $config['utm']);
         $container->setParameter('fullpipe_email_template.defaults.host', $config['host']);
         $container->setParameter('fullpipe_email_template.defaults.template', $config['templates']['default']);
