@@ -1,0 +1,4 @@
+services:
+#    fullpipe_email_template.example:
+#        class: Fullpipe\EmailTemplateBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
