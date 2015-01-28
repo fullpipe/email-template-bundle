@@ -66,7 +66,7 @@ class MessageFactory implements MessageFactoryInterface
         $htmlBody = $this->cssToInline($htmlBody);
         $htmlBody = $this->addUtmParams($htmlBody, $templateConfig['host'], $templateConfig['utm']);
 
-        if (empty($textBody) && $templateConfig['generate_text_vertion']) {
+        if (empty($textBody) && $templateConfig['generate_text_version']) {
             $textBody = $this->htmlToText($htmlBody);
         }
 

@@ -102,7 +102,7 @@ class Configuration implements ConfigurationInterface
                                 ->isRequired()
                                 ->cannotBeEmpty()
                             ->end()
-                            ->booleanNode('generate_text_vertion')
+                            ->booleanNode('generate_text_version')
                                 ->defaultTrue()
                             ->end()
                         ->end()
