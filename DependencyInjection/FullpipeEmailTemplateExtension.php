@@ -6,7 +6,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
-use Fullpipe\EmailTemplateBundle\Exception\TemplateNotExistsException;
 
 class FullpipeEmailTemplateExtension extends Extension
 {
@@ -17,10 +16,6 @@ class FullpipeEmailTemplateExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-
-        if (!isset($config['templates']['default'])) {
-            throw new TemplateNotExistsException('default');
-        }
 
         $config['utm'] = isset($config['utm']) ? $config['utm'] : array();
         $config['from'] = $this->prepareAddresses($config['from']);
