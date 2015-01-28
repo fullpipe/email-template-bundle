@@ -1,9 +1,17 @@
 parameters:
-    fullpipe_email_template.factory.message_factory.class: Fullpipe\EmailTemplateBundle\Factory\MessageFactory
+    fullpipe_email_template.message_factory.class: Fullpipe\EmailTemplateBundle\Factory\MessageFactory
+    fullpipe_email_template.mailer.class: Fullpipe\EmailTemplateBundle\Mailer\Mailer
 
 services:
-    fullpipe_email_template.factory.message_factory:
-        class: %fullpipe_email_template.factory.message_factory.class%
+    fullpipe_email_template.message_factory:
+        class: %fullpipe_email_template.message_factory.class%
         arguments:
             - @twig
+            - %fullpipe_email_template.templates%
+
+    fullpipe_email_template.mailer:
+        class: %fullpipe_email_template.mailer.class%
+        arguments:
+            - @mailer
+            - @fullpipe_email_template.message_factory
             - %fullpipe_email_template.templates%

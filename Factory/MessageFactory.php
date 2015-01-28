@@ -2,7 +2,6 @@
 
 namespace Fullpipe\EmailTemplateBundle\Factory;
 
-use Fullpipe\EmailTemplateBundle\Factory\MessageFactoryInterface;
 use TijsVerkoyen\CssToInlineStyles\CssToInlineStyles;
 use Html2Text\Html2Text;
 use Fullpipe\EmailTemplateBundle\Exception\TemplateNotExistsException;
@@ -26,8 +25,7 @@ class MessageFactory implements MessageFactoryInterface
     public function __construct(
         \Twig_Environment $twig,
         array $templateConfigs
-    )
-    {
+    ) {
         $this->twig = $twig;
         $this->templateConfigs = $templateConfigs;
     }
